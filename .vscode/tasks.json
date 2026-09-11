@@ -1,0 +1,68 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Master Audit: example.com",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "skills/audit-orchestrator/scripts/run_audit.py",
+        "https://example.com"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Master Audit: WAF Bot Probe",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "skills/audit-orchestrator/scripts/run_audit.py",
+        "https://example.com",
+        "--probe-bots"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Master Audit: Mock Mode",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "skills/audit-orchestrator/scripts/run_audit.py",
+        "--mock"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Master Audit: Save to audit_report.json",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "skills/audit-orchestrator/scripts/run_audit.py",
+        "https://example.com",
+        "--json-out",
+        "audit_report.json"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

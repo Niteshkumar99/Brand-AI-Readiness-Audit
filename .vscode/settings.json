@@ -1,0 +1,10 @@
+{
+  "python.analysis.autoImportCompletions": true,
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": false
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  }
+}

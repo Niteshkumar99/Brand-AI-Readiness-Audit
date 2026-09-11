@@ -1,0 +1,121 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Audit: Prompt for URL",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/skills/audit-orchestrator/scripts/run_audit.py",
+      "args": [
+        "${input:targetUrl}",
+        "--verbose"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Audit: example.com (Default)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/skills/audit-orchestrator/scripts/run_audit.py",
+      "args": [
+        "https://example.com",
+        "--verbose"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Audit: Secured / Staging Site (with WAF Bot Probe)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/skills/audit-orchestrator/scripts/run_audit.py",
+      "args": [
+        "${input:targetUrl}",
+        "--probe-bots",
+        "--verbose"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Audit: Localhost / Private Staging (--insecure SSL)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/skills/audit-orchestrator/scripts/run_audit.py",
+      "args": [
+        "https://127.0.0.1:8443",
+        "--insecure",
+        "--verbose"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Audit: Mock / Offline Test",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/skills/audit-orchestrator/scripts/run_audit.py",
+      "args": [
+        "--mock",
+        "--verbose"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Skill: Crawl & Render Check (with Bot Probe)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/skills/crawl-render-audit/scripts/crawl_render_check.py",
+      "args": [
+        "https://example.com",
+        "--probe-bots"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Skill: Structured Data Check",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/skills/structured-data-entity-audit/scripts/structured_data_check.py",
+      "args": [
+        "https://example.com"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Skill: Content Extractability Check",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/skills/content-extractability-audit/scripts/extractability_check.py",
+      "args": [
+        "https://example.com"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Skill: Freshness & Authority Check",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/skills/freshness-authority-audit/scripts/freshness_check.py",
+      "args": [
+        "https://example.com"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Skill: Engagement & Orientation Check",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/skills/engagement-orientation-audit/scripts/engagement_check.py",
+      "args": [
+        "https://example.com"
+      ],
+      "console": "integratedTerminal"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "targetUrl",
+      "type": "promptString",
+      "description": "Enter the URL or domain to audit (e.g., https://example.com)",
+      "default": "https://example.com"
+    }
+  ]
+}
