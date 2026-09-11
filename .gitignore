@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+
+# Local audit outputs
+audit_validation_output.json
+example_audit_report.json
+*.zip
